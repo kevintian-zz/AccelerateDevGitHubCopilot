@@ -35,6 +35,11 @@ public class JsonData
             await LoadData();
         }
     }
+    
+public Book? SearchBookByTitle(string title)
+{
+        return Books?.FirstOrDefault(b => b.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
+}
 
     public async Task LoadData()
     {
